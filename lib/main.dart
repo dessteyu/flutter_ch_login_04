@@ -31,66 +31,89 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: Colors.blue[300],
+        backgroundColor: Color(0xff8ce2ff),
         body: Center(
           child: Stack(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.all(32.0),
+                // padding: const EdgeInsets.all(32),
+                padding: const EdgeInsets.only(top: 120, right: 32, left: 32),
                 child: ClipPath(
                   clipper: RoundedDiagonalPathClipper(),
                   child: Container(
-                      height: size.height - (0.4 * size.height),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                        color: Colors.white,
-                      ),
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 200, right: 32, left: 32),
-                          child: Column(
-                            children: <Widget>[
-                              TextField(
-                                decoration: InputDecoration(
-                                    hintText: "Votre email",
-                                    prefixIcon: Icon(
-                                      Icons.mail,
-                                      color: Colors.blue,
-                                      size: 32,
-                                    )),
-                              ),
-                              SizedBox(
-                                height: 16,
-                              ),
-                              TextField(
-                                decoration: InputDecoration(
-                                    hintText: "Mot de passe",
-                                    prefixIcon: Icon(
-                                      Icons.lock,
-                                      color: Colors.blue,
-                                      size: 32,
-                                    )),
-                              ),
-                              SizedBox(
-                                height: 16,
-                              ),
-                              // Padding(
-                                // padding: const EdgeInsets.only(left: 160),
-                                RichText(
-                                  textAlign: TextAlign.right,
-                                  textDirection: TextDirection.rtl,
-                                    text: TextSpan(
-                                  text: 'mot de passe oublié',
-                                  style: TextStyle(color: Colors.grey)
-
-                                )
-                                ,),
-                              // )
-                            ],
-                          ),
-                        ),
-                      )),
+                    height: size.height - (0.4 * size.height),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 290, right: 64, left: 64),
+                child: Column(
+                  children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(
+                          hintText: "Votre email",
+                          prefixIcon: Icon(
+                            Icons.mail,
+                            color: Colors.blue,
+                            size: 32,
+                          )),
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                          hintText: "Mot de passe",
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: Colors.blue,
+                            size: 32,
+                          )),
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    // Padding(
+                    // padding: const EdgeInsets.only(left: 160),
+                    RichText(
+                      textAlign: TextAlign.right,
+                      textDirection: TextDirection.rtl,
+                      text: TextSpan(
+                          text: 'mot de passe oublié',
+                          style: TextStyle(color: Colors.grey)),
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    RaisedButton(
+                      color: Colors.blue,
+                      onPressed: () {},
+                      child: Text('Login',
+                          style: TextStyle(color: Colors.white70)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                    )
+                    // )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 115, right: 60, top: 110),
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(90)),
+                  child: Icon(
+                    Icons.person,
+                    color: Colors.white70,
+                    size: 40,
+                  ),
                 ),
               )
             ],
