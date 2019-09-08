@@ -35,6 +35,16 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
           child: Stack(
             children: <Widget>[
+              Center(
+                child: Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, size.height / 1.4),
+                    child: Image.asset(
+                      'assets/images/logo_flay_bird.png',
+                      height: 100,
+                      width: 100,
+                      // color: Colors.black,
+                    )),
+              ),
               Padding(
                 // padding: const EdgeInsets.all(32),
                 padding: const EdgeInsets.only(top: 120, right: 32, left: 32),
@@ -50,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 290, right: 64, left: 64),
+                padding: const EdgeInsets.only(top: 290, right: 48, left: 48),
                 child: Column(
                   children: <Widget>[
                     TextField(
@@ -79,12 +89,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     // Padding(
                     // padding: const EdgeInsets.only(left: 160),
-                    RichText(
-                      textAlign: TextAlign.right,
-                      textDirection: TextDirection.rtl,
-                      text: TextSpan(
-                          text: 'mot de passe oublié',
-                          style: TextStyle(color: Colors.grey)),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: RichText(
+                        textAlign: TextAlign.right,
+                        textDirection: TextDirection.rtl,
+                        text: TextSpan(
+                            text: 'mot de passe oublié',
+                            style: TextStyle(color: Colors.grey)),
+                      ),
                     ),
                     SizedBox(
                       height: 16,
@@ -96,8 +109,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(color: Colors.white70)),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 50),
+                      child: RichText(
+                        text: TextSpan(
+                            text: "Sign Up",
+                            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+                      ),
                     )
-                    // )
                   ],
                 ),
               ),
