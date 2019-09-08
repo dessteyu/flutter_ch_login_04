@@ -29,6 +29,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    Color defaultColors = Color(0xff8ce2ff);
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Color(0xff8ce2ff),
@@ -66,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     TextField(
                       decoration: InputDecoration(
                           hintText: "Votre email",
+                          hintStyle: TextStyle(color: defaultColors),
                           prefixIcon: Icon(
                             Icons.mail,
                             color: Colors.blue,
@@ -78,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     TextField(
                       decoration: InputDecoration(
                           hintText: "Mot de passe",
+                          hintStyle: TextStyle(color: defaultColors),
                           prefixIcon: Icon(
                             Icons.lock,
                             color: Colors.blue,
@@ -115,7 +118,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: RichText(
                         text: TextSpan(
                             text: "Sign Up",
-                            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold)),
                       ),
                     )
                   ],
